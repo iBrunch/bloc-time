@@ -1,8 +1,7 @@
 (function() {
     function HomeCtrl() {
-    }
-
+    }   
     angular
-        .module('blocChat')
+        .module('blocTime')
         .controller('HomeCtrl', [HomeCtrl]);
 })();

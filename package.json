@@ -1,13 +1,24 @@
 {
-  "name": "chat-example",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "name": "bloc-frontend-project-starter",
+  "version": "0.0.3",
+  "description": "Starter project for the Bloc Frontend Web Development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloc/bloc-frontend-project-starter"
+  },
   "main": "server.js",
-  "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Bloc Inc",
+  "license": "ISC",
   "dependencies": {
-    "async": "~0.2.8",
-    "express": "~3.2.4",
-    "socket.io": "~0.9.14"
+    "angular-ui-router": "^0.4.2",
+    "hapi": "~7.5.0",
+    "path": "^0.4.9"
+  },
+  "devDependencies": {
+    "connect-modrewrite": "^0.7.9",
+    "es5-shim": "^4.0.1"
   }
 }

@@ -1,0 +1,15 @@
+<div class='fluid-container'>
+  <div class='row'>
+    <div>
+      <h1 id="display" class="text-center timer" ng-bind="clock">{{ clock }}</h1>
+    </div>
+  </div>
+</div>
+<div class='fluid-container'>
+    <div class="row row-centered pad">
+      <button class='glyphicon glyphicon-play btn btn-success btn-lg' ng-click="start()" ng-hide="button">
+      </button>
+      <button class='glyphicon glyphicon-repeat btn btn-danger btn-lg' ng-click="reset()" ng-show="button">
+      </button>
+    </div>
+</div>
