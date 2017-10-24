@@ -1,7 +1,12 @@
 <div class='fluid-container'>
   <div class='row'>
     <div>
-      <h1 id="display" class="text-center timer" ng-bind="clock">{{ clock }}</h1>
+      <h1 class="text-center timer" ng-bind="clock">{{ clock }}</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div>
+      <h4 class="text-center alarm" ng-bind="alarm">{{ alarm }}</h4>
     </div>
   </div>
 </div>
@@ -10,6 +15,8 @@
       <button class='glyphicon glyphicon-play btn btn-success btn-lg' ng-click="start()" ng-hide="button">
       </button>
       <button class='glyphicon glyphicon-repeat btn btn-danger btn-lg' ng-click="reset()" ng-show="button">
+      </button>
+      <button class='glyphicon glyphicon-sunglasses btn btn-primary btn-lg' ng-click="startBreak()" ng-show="onBreakButton">
       </button>
     </div>
 </div>

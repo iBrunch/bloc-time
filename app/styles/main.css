@@ -13,10 +13,16 @@ body {
     padding:5% 0% 0% 0%;
 }
 
-h1 {
+.title {
     color: black;
     font-family: 'Montserrat', sans-serif;
-    font-size: 800%;
+    font-size: 50px;
+}
+
+h4 {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 
 p {
@@ -27,7 +33,7 @@ p {
 
 .timer {
     font-family: 'Cutive Mono', "Courier";
-    color: blck;
+    color: black;
     font-size: 700%;
 }
 
