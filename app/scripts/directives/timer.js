@@ -6,31 +6,47 @@
       scope: {},
       link: function(scope, element, attributes) {
         var BREAK_TIME = 2000;
-        var WORK_TIME = 4000;
+        var WORK_TIME = 1000;
         var breakCount = 0;
+        var workCount = 0;
         scope.button = false;
         scope.onBreakButton = false;
+        scope.extendedBreakButton = false;
         scope.clock = "25:00";
         scope.alarm = "Work Time";
         
         
-        scope.start = function(){
+        scope.start = function() {
           scope.button = true;
           scope.currentTime = WORK_TIME;
           startTimer();
         };
         
-        scope.startBreak = function(){
-          scope.clock = "05:00";
-          scope.alarm = "Break Time";
+        var breakButtonSwitch = function(){
           scope.button = true;
-          scope.currentTime = BREAK_TIME;
           scope.onBreakButton = false;
+          scope.extendedBreakButton = false;
+          scope.currentTime = BREAK_TIME;
           breakCount = 1;
+          workCount = 0;
           startTimer();
         };
+        
+        scope.startBreak = function() {
+          BREAK_TIME = 2000;
+          scope.clock = "05:00";
+          scope.alarm = "Break Time";
+          breakButtonSwitch();
+        };
+        
+        scope.startExtendedBreak = function() {
+          BREAK_TIME = 6000;
+          scope.clock = "30:00";
+          scope.alarm = "Extra Break Time";
+          breakButtonSwitch();
+        };
 
-        scope.reset = function(){
+        scope.reset = function() {
           scope.button = false;
           scope.clock = "25:00";
           $interval.cancel(countdown);
@@ -65,8 +81,15 @@
                 scope.clock = "25:00";
                 scope.alarm = "Back to work! Hit reset to start a new session.";
               } else if (breakCount == 0) {
+                workCount += 1;
+                if(workCount > 3){
+                  scope.extendedBreakButton = true;
+                  scope.onBreakButton = false;
+                }else{
+                  scope.onBreakButton = true;
+                }
+                console.log(workCount);
                 $interval.cancel(countdown);
-                scope.onBreakButton = true;
                 scope.alarm = "Ready for a break? Hit the break button.";
               }
             }
