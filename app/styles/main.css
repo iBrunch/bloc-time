@@ -10,7 +10,7 @@ body {
     background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 88%, rgba(181,198,208,1) 100%);
     background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 88%, rgba(181,198,208,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#b5c6d0', GradientType=0 );
-    padding:5% 0% 0% 0%;
+
 }
 
 .title {
@@ -19,22 +19,16 @@ body {
     font-size: 50px;
 }
 
-h4 {
+.subtitle {
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
-p {
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 150%;
-}
-
 .timer {
     font-family: 'Cutive Mono', "Courier";
     color: black;
-    font-size: 700%;
+    font-size: 125px;
 }
 
 .row-centered {
@@ -60,4 +54,26 @@ p {
     color: white;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 14px;
+}
+
+.btn-xl {
+    min-width: 125px;
+    min-height: 60px;
+}
+
+.sound-control {
+    position: fixed;
+    bottom: 0;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 767px) {
+    .hidden-md-down{
+        visibility: hidden;   
+    }
+    
+    .timer {
+        font-size: 100px;
+    }
 }

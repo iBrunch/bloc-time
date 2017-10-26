@@ -5,16 +5,35 @@
       restrict: 'E',
       scope: {},
       link: function(scope, element, attributes) {
-        var BREAK_TIME = 2000;
-        var WORK_TIME = 1000;
+        var BREAK_TIME = 3000;
+        var WORK_TIME = 6000;
         var breakCount = 0;
         var workCount = 0;
+        var chime = new buzz.sound( "assets/sounds/35631__reinsamba__crystal-glass.wav", {
+          preload: true
+        });
+        scope.$watch('currentTime', function() {
+          if (scope.currentTime === 0) {
+            chime.play();
+          }
+        });
+        
+        scope.soundOn = true;
         scope.button = false;
         scope.onBreakButton = false;
         scope.extendedBreakButton = false;
         scope.clock = "25:00";
         scope.alarm = "Work Time";
         
+        scope.muteSound = function() {
+          if(scope.soundOn == true){
+            chime.mute();
+            scope.soundOn = false;
+          }else{
+            chime.unmute();
+            scope.soundOn = true;
+          }
+        };
         
         scope.start = function() {
           scope.button = true;
@@ -33,7 +52,7 @@
         };
         
         scope.startBreak = function() {
-          BREAK_TIME = 2000;
+          BREAK_TIME = 4000;
           scope.clock = "05:00";
           scope.alarm = "Break Time";
           breakButtonSwitch();
@@ -52,7 +71,7 @@
           $interval.cancel(countdown);
           scope.alarm = "Work Time";
           breakCount = 0;
-          if (scope.currentTime == 0 ){
+          if (scope.currentTime <= 0 ){
             scope.currentTime = WORK_TIME;
             scope.start();
           }
@@ -75,7 +94,7 @@
                 } else {
                   scope.clock = min + ":" + sec;
                 }
-            }else if (scope.currentTime == 0 ) {
+            }else if (scope.currentTime <= 0 ) {
               if (breakCount == 1) {
                 $interval.cancel(countdown);
                 scope.clock = "25:00";
@@ -88,7 +107,6 @@
                 }else{
                   scope.onBreakButton = true;
                 }
-                console.log(workCount);
                 $interval.cancel(countdown);
                 scope.alarm = "Ready for a break? Hit the break button.";
               }

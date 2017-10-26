@@ -6,20 +6,23 @@
   </div>
   <div class='row'>
     <div>
-      <h4 class="text-center alarm" ng-bind="alarm">{{ alarm }}</h4>
+      <h4 class="text-center subtitle" ng-bind="alarm">{{ alarm }}</h4>
     </div>
   </div>
 </div>
 <div class='fluid-container'>
     <div class="row row-centered pad">
-      <button class='glyphicon glyphicon-play btn btn-success btn-lg' ng-click="start()" ng-hide="button"></button>
-      <button class='glyphicon glyphicon-repeat btn btn-danger btn-lg' ng-click="reset()" ng-show="button"></button>
-      <button class='glyphicon glyphicon-sunglasses btn btn-primary btn-lg' ng-click="startBreak()" ng-show="onBreakButton"></button>
-  
-
-        <button class='btn btn-primary btn-lg' ng-click="startBreak()" ng-show="extendedBreakButton"> 5 min break</button>
-        <button class='btn btn-info btn-lg' ng-click="startExtendedBreak()" ng-show="extendedBreakButton"> 30 min break</button>
-             
-
+      <button class='glyphicon glyphicon-play btn btn-success btn-xl' ng-click="start()" ng-hide="button"></button>
+      <button class='glyphicon glyphicon-repeat btn btn-danger btn-xl' ng-click="reset()" ng-show="button"></button>
+      <button class='glyphicon glyphicon-sunglasses btn btn-primary btn-xl' ng-click="startBreak()" ng-show="onBreakButton"></button>
+      <button class='btn btn-primary btn-xl' ng-click="startBreak()" ng-show="extendedBreakButton"> 5 min break</button>
+      <button class='btn btn-info btn-xl' ng-click="startExtendedBreak()" ng-show="extendedBreakButton"> 30 min break</button>
     </div>
+</div>
+
+<div class="fluid-container sound-control hidden-md-down">
+  <div class="row">
+    <button class='glyphicon glyphicon-volume-off btn btn-danger btn-lg' ng-click="muteSound()" ng-hide="soundOn"></button>
+    <button class='glyphicon glyphicon-volume-up btn btn-success btn-lg' ng-click="muteSound()" ng-show="soundOn"></button>
+  </div>
 </div>
