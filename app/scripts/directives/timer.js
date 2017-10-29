@@ -84,6 +84,9 @@
         var startTimer = function() {
           countdown = $interval(function() {
             if (scope.currentTime > 0) {
+              if(scope.currentTime <= 1000){
+                scope.buttonDisable = true;
+              }
                 scope.currentTime -= 1000;
                 min = Math.floor(scope.currentTime / 60000);
                 sec = (scope.currentTime - min * 60000) / 1000;
@@ -95,20 +98,24 @@
                   scope.clock = min + ":" + sec;
                 }
             }else if (scope.currentTime <= 0 ) {
-              if (breakCount == 1) {
-                $interval.cancel(countdown);
-                scope.clock = "25:00";
-                scope.alarm = "Back to work! Hit reset to start a new session.";
-              } else if (breakCount == 0) {
+              $interval.cancel(countdown);
+              scope.buttonDisable = false;
+              
+              if (breakCount == 0) {
                 workCount += 1;
+                
                 if(workCount > 3){
+                  scope.buttonDisable = false;
                   scope.extendedBreakButton = true;
                   scope.onBreakButton = false;
                 }else{
                   scope.onBreakButton = true;
                 }
-                $interval.cancel(countdown);
+                
                 scope.alarm = "Ready for a break? Hit the break button.";
+              } else if (breakCount == 1) {
+                scope.clock = "25:00";
+                scope.alarm = "Back to work! Hit reset to start a new session.";
               }
             }
           }, 1000);

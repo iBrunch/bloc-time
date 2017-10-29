@@ -13,7 +13,7 @@
 <div class='fluid-container'>
     <div class="row row-centered pad">
       <button class='glyphicon glyphicon-play btn btn-success btn-xl' ng-click="start()" ng-hide="button"></button>
-      <button class='glyphicon glyphicon-repeat btn btn-danger btn-xl' ng-click="reset()" ng-show="button"></button>
+      <button class='glyphicon glyphicon-repeat btn btn-danger btn-xl' ng-disabled="buttonDisable" ng-click="reset()" ng-show="button"></button>
       <button class='glyphicon glyphicon-sunglasses btn btn-primary btn-xl' ng-click="startBreak()" ng-show="onBreakButton"></button>
       <button class='btn btn-primary btn-xl' ng-click="startBreak()" ng-show="extendedBreakButton"> 5 min break</button>
       <button class='btn btn-info btn-xl' ng-click="startExtendedBreak()" ng-show="extendedBreakButton"> 30 min break</button>

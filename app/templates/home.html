@@ -1,16 +1,37 @@
-<div class='fluid-container'>
-  <div class='row'>
+<div class="hidden-md-down task-bar">
+    <h1 class="task-title">Task History</h1>
     <div>
-      <h1 class='text-center title'>BlocTime</h1>
+      <form name="taskForm" ng-submit="home.create(home.task)">
+        <input autofocus type="text" class="add-task" ng-model="home.task" >
+        <div class="task-button-container">
+            <button class="btn btn-primary" ng-click="home.create(home.task)">Add task</button>
+        </div> 
+      </form>
     </div>
-  </div>
-  <div class='row'>
     <div>
-      <h4 class="text-center subtitle">Time your work.</h4>
+      <table id="taskTable" class="table dont-break">
+        <tr id="task-delete-row" ng-repeat="task in home.tasks" class="row" ng-class-odd="'row-color'">
+          <td class="task">{{ task.$value }} <a id="task-delete" class="glyphicon glyphicon-remove pull-right" ng-click="home.delete(task)"></a> </td> 
+        </tr>
+      </table>
     </div>
-  </div>
-  <br>
-  <br>
 </div>
 
-<timer></timer>
+<div class="main-content">
+  <div class='fluid-container'>
+    <div class='row'>
+      <div>
+        <h1 class='text-center title'>BlocTime</h1>
+      </div>
+    </div>
+    <div class='row'>
+      <div>
+        <h4 class="text-center subtitle">Time your work.</h4>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+  
+  <timer></timer>
+</div>
