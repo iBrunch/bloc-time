@@ -10,7 +10,7 @@
     </div>
     <div>
       <table id="taskTable" class="table dont-break">
-        <tr id="task-delete-row" ng-repeat="task in home.tasks" class="row" ng-class-odd="'row-color'">
+        <tr id="task-delete-row" ng-repeat="task in home.tasks | orderBy: 'id' : true" class="row" ng-class-odd="'row-color'">
           <td class="task">{{ task.$value }} <a id="task-delete" class="glyphicon glyphicon-remove pull-right" ng-click="home.delete(task)"></a> </td> 
         </tr>
       </table>
