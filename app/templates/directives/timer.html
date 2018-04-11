@@ -12,7 +12,8 @@
 </div>
 <div class='fluid-container'>
     <div class="row row-centered pad">
-      <button class='glyphicon glyphicon-play btn btn-success btn-xl' ng-click="start()" ng-hide="button"></button>
+      <button class='btn btn-success btn-xl' ng-click="start()" ng-hide="button"><h4 class="text-center start-text">start timer</h4></button>
+      
       <button class='glyphicon glyphicon-repeat btn btn-danger btn-xl' ng-disabled="buttonDisable" ng-click="reset()" ng-show="button"></button>
       <button class='glyphicon glyphicon-sunglasses btn btn-primary btn-xl' ng-click="startBreak()" ng-show="onBreakButton"></button>
       <button class='btn btn-primary btn-xl' ng-click="startBreak()" ng-show="extendedBreakButton"> 5 min break</button>

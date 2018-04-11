@@ -5,8 +5,8 @@
       restrict: 'E',
       scope: {},
       link: function(scope, element, attributes) {
-        var BREAK_TIME = 3000;
-        var WORK_TIME = 6000;
+        var BREAK_TIME = 300000;
+        var WORK_TIME = 1500000;
         var breakCount = 0;
         var workCount = 0;
         var chime = new buzz.sound( "assets/sounds/35631__reinsamba__crystal-glass.wav", {
@@ -52,14 +52,14 @@
         };
         
         scope.startBreak = function() {
-          BREAK_TIME = 4000;
+          BREAK_TIME = 300000;
           scope.clock = "05:00";
           scope.alarm = "Break Time";
           breakButtonSwitch();
         };
         
         scope.startExtendedBreak = function() {
-          BREAK_TIME = 6000;
+          BREAK_TIME = 1800000;
           scope.clock = "30:00";
           scope.alarm = "Extra Break Time";
           breakButtonSwitch();
