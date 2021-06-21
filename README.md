@@ -1,22 +1,21 @@
+[Live Demo](https://tomatempo-ibrunch.herokuapp.com/)
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## Explanation
 
+TomaTempo was created with Firebase and AngularJS to provide users with a Pomodoro time management application.
 
-Welcome to your Node.js project on Cloud9 IDE!
+## Problem
 
-This chat example showcases how to use `socket.io` with a static `express` server.
+Working in an environment with distractions, problems coming from every direction and tons of priorities are hard to manage.
 
-## Running the server
+## Solution
 
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
+TomaTempo is a simple tool to list your tasks and implement a period of focus and rest.
 
-2) Alternatively you can launch the app from the Terminal:
+## Results
 
-    $ node server.js
+TomaTempo uses the Pomodoro Technique, which splits your work sessions into 25-minute chunks with five-minute breaks in between. To use this technique, just start the timer and work on your chosen task for the entire time. This way, distracting things like email, messages or aimlessly browsing sites is put off for a reasonable amount of time. You can check these things as a reward during your break. Your break is not allowed to have anything work-related in it.
 
-Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+## Conclusion
+
+With TomaTempo, you have a powerful tool to manage your productivity.
